@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yu Chen | AI & IoT Engineering Student</title>
+  <meta name="description" content="Personal portfolio of Yu Chen — AI & IoT Engineering Student specializing in edge intelligence, distributed sensor networks, and autonomous physical systems.">
+  <meta name="keywords" content="Yu Chen, AI, IoT, Edge Computing, Embedded Systems, Machine Learning, Engineering Student, Taiwan">
+  <meta name="author" content="Yu Chen">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yu Chen | AI & IoT Engineering Student">
+  <meta property="og:description" content="Exploring Intelligent Edge Systems, Distributed IoT Mesh, and Autonomous Agent Infrastructure.">
+  <meta property="og:image" content="./assets/avatar.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Animated Background -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="header">
+    <nav class="nav-wrapper" aria-label="Main Navigation">
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <div class="brand-mark">YC</div>
+        <div class="brand-name">Yu<span>Chen</span></div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#terminal-section" class="nav-link">Terminal</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#telemetry" class="nav-link">IoT Live Demo</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Journey</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Live Time & Timezone Switcher -->
+        <div class="time-widget" id="headerTimeWidget">
+          <div class="time-clock">
+            <svg class="time-clock-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="time-digits" id="navTimeDigits">--:--:--</span>
+          </div>
+          <div class="timezone-picker">
+            <select id="timezoneSelect" class="timezone-select" aria-label="Select Time Zone" title="Switch Time Zone">
+              <option value="auto">📍 Local Time</option>
+              <option value="Asia/Taipei">🇹🇼 Taipei (UTC+8)</option>
+              <option value="Asia/Tokyo">🇯🇵 Tokyo (JST)</option>
+              <option value="America/Los_Angeles">🇺🇸 US Pacific (PT)</option>
+              <option value="America/New_York">🇺🇸 US Eastern (ET)</option>
+              <option value="Europe/London">🇬🇧 London (GMT)</option>
+              <option value="Europe/Berlin">🇩🇪 Berlin (CET)</option>
+              <option value="Australia/Sydney">🇦🇺 Sydney (AEST)</option>
+              <option value="UTC">🌐 UTC</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Color Theme" title="Toggle Theme">
+          <svg class="icon-sun" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg class="icon-moon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm" id="navContactBtn">
+          <span>Let's Talk</span>
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         Hero Section
+         ======================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Hero Text -->
+          <div class="hero-content">
+            <div class="hero-badge-wrapper">
+              <div class="status-badge">
+                <span class="status-dot"></span>
+                <span>Engineering Student &bull; Open for Internships & Projects</span>
+              </div>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient-text">Yu Chen</span>
+            </h1>
+
+            <div class="typing-container">
+              <span id="typingText"></span><span class="typing-cursor">_</span>
+            </div>
+
+            <p class="hero-description">
+              Passionate student researcher and developer exploring the frontier of Artificial Intelligence
+              and the Internet of Things (AIoT). Focusing on low-power edge neural inference,
+              resilient mesh protocols, and smart hardware-software co-design.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary" id="heroExploreBtn">
+                <span>View Shipped Projects</span>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </a>
+
+              <a href="#telemetry" class="btn btn-secondary" id="heroDemoBtn">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span>Live IoT Demo</span>
+              </a>
+
+              <a href="#terminal-section" class="btn btn-secondary" id="heroTerminalBtn">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>Open Terminal</span>
+              </a>
+            </div>
+
+            <!-- Stats Highlight -->
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number"><span class="counter" data-target="6">0</span>+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number"><span class="counter" data-target="28">0</span>+</div>
+                <div class="stat-label">Production Systems</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number"><span class="counter" data-target="150">0</span>k+</div>
+                <div class="stat-label">IoT Telemetry/sec</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number"><span class="counter" data-target="99">0</span>.9%</div>
+                <div class="stat-label">Cluster Reliability</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual & Avatar Card -->
+          <div class="hero-visual-card">
+            <div class="avatar-image-wrapper">
+              <img src="./assets/avatar.jpg" alt="Yu Chen - AI & IoT Engineering Student" class="avatar-image" loading="eager">
+              <div class="avatar-glass-overlay"></div>
+            </div>
+
+            <!-- Floating Micro Badges -->
+            <div class="floating-chip floating-chip-1">
+              <div class="chip-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+              </div>
+              <span>Edge NPU &bull; 2.1ms</span>
+            </div>
+
+            <div class="floating-chip floating-chip-2">
+              <div class="chip-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                </svg>
+              </div>
+              <span>Mesh Active &bull; 92 Nodes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Interactive Terminal Section
+         ======================================================================= -->
+    <section id="terminal-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Interactive CLI</div>
+          <h2 class="section-title">Developer Console</h2>
+          <p class="section-desc">Experience my profile through a real-time interactive terminal. Try typing commands or click quick action pills.</p>
+        </div>
+
+        <div class="terminal-wrapper" id="terminalWrapper">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="term-btn red"></span>
+              <span class="term-btn yellow"></span>
+              <span class="term-btn green"></span>
+            </div>
+            <div class="terminal-title">yuchen@edge-cluster-01: ~ (zsh)</div>
+            <div style="width: 48px;"></div>
+          </div>
+
+          <div class="terminal-body" id="terminalBody">
+            <div class="term-line">
+              <span class="term-prompt">yuchen@aiot-node</span>:<span class="term-path">~</span>$ <span class="term-cmd">motd</span>
+            </div>
+            <div class="term-output highlight">
+              🚀 Welcome to Yu Chen's AI & IoT Edge Console [v2.4.0-release]<br>
+              System status: All subsystems healthy | 4 Nodes online | Kernel 6.8.0-edge<br>
+              Type <strong style="color: #4ade80;">'help'</strong> to see available commands or click the shortcuts below.
+            </div>
+          </div>
+
+          <div class="terminal-quick-actions">
+            <span class="quick-action-label">Quick run:</span>
+            <button class="quick-cmd-btn" data-cmd="help">help</button>
+            <button class="quick-cmd-btn" data-cmd="cat bio.md">cat bio.md</button>
+            <button class="quick-cmd-btn" data-cmd="skills">skills</button>
+            <button class="quick-cmd-btn" data-cmd="projects">projects</button>
+            <button class="quick-cmd-btn" data-cmd="status">status</button>
+            <button class="quick-cmd-btn" data-cmd="contact">contact</button>
+            <button class="quick-cmd-btn" data-cmd="clear">clear</button>
+          </div>
+
+          <form id="terminalForm" onsubmit="return false;" style="padding: 0 1.25rem 1rem; background: #090d16;">
+            <div class="terminal-input-row">
+              <span class="term-prompt">yuchen@aiot-node</span>:<span class="term-path">~</span>$&nbsp;
+              <input type="text" id="terminalInput" class="terminal-input" placeholder="Type a command (e.g. 'help', 'bio', 'skills')..." autocomplete="off" spellcheck="false">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Skills & Capabilities Matrix
+         ======================================================================= -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Expertise</div>
+          <h2 class="section-title">Technical Capabilities</h2>
+          <p class="section-desc">A cross-disciplinary toolkit spanning embedded firmware, neural inference acceleration, distributed cloud backends, and modern interfaces.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="skills-filter-wrapper">
+          <button class="filter-btn active" data-filter="all">All Disciplines</button>
+          <button class="filter-btn" data-filter="ai">AI & Edge Intelligence</button>
+          <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
+          <button class="filter-btn" data-filter="systems">Systems & Cloud</button>
+          <button class="filter-btn" data-filter="web">Web & Interfaces</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skillsGrid">
+          <!-- AI 1 -->
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <div class="skill-name">Edge AI & NPU Acceleration</div>
+                <div class="skill-category-badge">AI / ML</div>
+              </div>
+            </div>
+            <p class="skill-desc">TensorRT, ONNX Runtime, quantization (INT8/FP16), and deploying vision transformers to low-power edge silicon.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-header">
+                <span class="skill-progress-level">Senior Mastery</span>
+                <span class="skill-progress-pct">95%</span>
+              </div>
+              <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 95%;"></div></div>
+            </div>
+          </div>
+
+          <!-- AI 2 -->
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <div class="skill-name">LLM Agents & Tool Use</div>
+                <div class="skill-category-badge">AI / Agents</div>
+              </div>
+            </div>
+            <p class="skill-desc">Autonomous multi-agent orchestration, function calling, context caching, and physical world actuators integration.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-header">
+                <span class="skill-progress-level">Advanced</span>
+                <span class="skill-progress-pct">92%</span>
+              </div>
+              <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 92%;"></div></div>
+            </div>
+          </div>
+
+          <!-- IoT 1 -->
+          <div class="skill-card" data-category="iot">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                </svg>
+              </div>
+              <div>
+                <div class="skill-name">Embedded C++ & Rust</div>
+                <div class="skill-category-badge">IoT / Hardware</div>
+              </div>
+            </div>
+            <p class="skill-desc">Bare-metal microcontrollers, FreeRTOS, ESP-IDF, STM32, Nordic nRF5340, and memory-safe Rust firmware.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-header">
+                <span class="skill-progress-level">Senior Mastery</span>
+                <span class="skill-progress-pct">94%</span>
+              </div>
+              <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 94%;"></div></div>
+            </div>
+          </div>
+
+          <!-- IoT 2 -->
+          <div class="skill-card" data-category="iot">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <div class="skill-name">Mesh & Protocol Engineering</div>
+                <div class="skill-category-badge">IoT / Protocols</div>
+              </div>
+            </div>
+            <p class="skill-desc">MQTT-SN, CoAP, BLE 5.4 Mesh, Matter/Thread, LoRaWAN, and ultra-reliable low-latency telemetry transport.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-header">
+                <span class="skill-progress-level">Senior Mastery</span>
+                <span class="skill-progress-pct">90%</span>
+              </div>
+              <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Systems 1 -->
+          <div class="skill-card" data-category="systems">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <div>
+                <div class="skill-name">Distributed Telemetry & Kafka</div>
+                <div class="skill-category-badge">Cloud / Backend</div>
+              </div>
+            </div>
+            <p class="skill-desc">High-throughput ingestion with Apache Kafka, ClickHouse, Redis time-series, and Kubernetes edge clusters.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-header">
+                <span class="skill-progress-level">Advanced</span>
+                <span class="skill-progress-pct">88%</span>
+              </div>
+              <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Web 1 -->
+          <div class="skill-card" data-category="web">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <div>
+                <div class="skill-name">Real-Time Web Dashboards</div>
+                <div class="skill-category-badge">Web / Frontend</div>
+              </div>
+            </div>
+            <p class="skill-desc">WebSockets, WebGL/Canvas rendering, modern responsive CSS, and sub-16ms telemetry visualizations.</p>
+            <div class="skill-progress-wrap">
+              <div class="skill-progress-header">
+                <span class="skill-progress-level">Senior Mastery</span>
+                <span class="skill-progress-pct">93%</span>
+              </div>
+              <div class="skill-progress-bar"><div class="skill-progress-fill" style="width: 93%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Live IoT Telemetry Simulator (Showcase Widget)
+         ======================================================================= -->
+    <section id="telemetry">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Interactive Simulation</div>
+          <h2 class="section-title">Live Edge Telemetry Stream</h2>
+          <p class="section-desc">Experience a live client-side simulation of an edge computing gateway node. Adjust sampling rates and trigger synthetic load spikes.</p>
+        </div>
+
+        <div class="telemetry-dashboard">
+          <div class="telemetry-header">
+            <div class="telemetry-node-info">
+              <div class="status-dot"></div>
+              <div>
+                <strong style="color: var(--text-highlight);">Node: EdgeGateway-TX9</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Firmware v3.12-RTOS &bull; Nordic nRF5340 + Hailo-8 NPU</div>
+              </div>
+            </div>
+            <div class="telemetry-header-actions">
+              <div class="telemetry-time-zoom" id="telemetryTimeZoom">
+                <span class="zoom-label">Time Zoom:</span>
+                <div class="zoom-btn-group">
+                  <button class="zoom-btn" data-zoom="10" title="10 seconds high-res window (10x zoom)">10s</button>
+                  <button class="zoom-btn active" data-zoom="30" title="30 seconds window (5x zoom)">30s</button>
+                  <button class="zoom-btn" data-zoom="60" title="60 seconds window (2x zoom)">60s</button>
+                  <button class="zoom-btn" data-zoom="120" title="2 minutes overview (1x zoom)">2m</button>
+                </div>
+              </div>
+              <div class="node-chip">ONLINE &bull; 99.98% ACC</div>
+            </div>
+          </div>
+
+          <!-- Live KPIs -->
+          <div class="telemetry-kpis">
+            <div class="kpi-card">
+              <span class="kpi-label">Node Temp</span>
+              <div class="kpi-value"><span id="valTemp">41.8</span><span class="kpi-unit">°C</span></div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Vibration FFT</span>
+              <div class="kpi-value"><span id="valVibe">0.24</span><span class="kpi-unit">g</span></div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">NPU Latency</span>
+              <div class="kpi-value"><span id="valLatency">2.1</span><span class="kpi-unit">ms</span></div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">Throughput</span>
+              <div class="kpi-value"><span id="valPackets">1,240</span><span class="kpi-unit">pkt/s</span></div>
+            </div>
+          </div>
+
+          <!-- Canvas Waveform -->
+          <div class="canvas-container">
+            <canvas id="telemetryChart"></canvas>
+            <div class="canvas-legend">
+              <div class="legend-item">
+                <span class="legend-dot cyan"></span>
+                <span>Vibration Acceleration Waveform (g)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot indigo"></span>
+                <span>Silicon Junction Temp Curve (°C)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Controls -->
+          <div class="telemetry-controls-row">
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Sampling Frequency</span>
+                <span class="slider-val" id="freqVal">60 Hz</span>
+              </div>
+              <input type="range" class="custom-range" id="freqSlider" min="20" max="120" value="60">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>NPU Workload Intensity</span>
+                <span class="slider-val" id="loadVal">45%</span>
+              </div>
+              <input type="range" class="custom-range" id="loadSlider" min="10" max="100" value="45">
+            </div>
+
+            <div>
+              <button class="btn btn-secondary" id="triggerAnomalyBtn" style="font-size: 0.85rem; padding: 0.65rem 1.1rem;">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <span>Inject Anomaly Spike</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Featured Projects Showcase
+         ======================================================================= -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Portfolio</div>
+          <h2 class="section-title">Featured Engineering Work</h2>
+          <p class="section-desc">Selected projects highlighting deep integration between edge hardware, distributed networks, and modern AI models.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="./assets/edgevision.jpg" alt="Sentinel-AI Edge Computer Vision" class="project-img" loading="lazy">
+              <div class="project-badge">Industrial Vision</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Sentinel-AI: Sub-3ms Vision Node</h3>
+              <p class="project-desc">
+                High-speed edge camera unit with on-device INT8 YOLOv10 inference, detecting defects and robotics hazards at 120 FPS on embedded silicon.
+              </p>
+              <ul class="project-highlights">
+                <li>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Sub-3ms end-to-end frame processing</span>
+                </li>
+                <li>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Zero-cloud offline failover resilience</span>
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">C++20</span>
+                <span class="project-tag">TensorRT</span>
+                <span class="project-tag">OpenCV</span>
+                <span class="project-tag">GStreamer</span>
+                <span class="project-tag">Hailo NPU</span>
+              </div>
+              <div class="project-footer">
+                <a href="#contact" class="btn btn-secondary btn-sm">
+                  <span>Architecture Brief</span>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="./assets/neuromesh.jpg" alt="NeuroMesh IoT Decentralized Network" class="project-img" loading="lazy">
+              <div class="project-badge">Mesh Protocol</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">NeuroMesh: Resilient Sensor Grid</h3>
+              <p class="project-desc">
+                Self-healing wireless mesh routing layer for environmental sensor arrays, featuring cryptographic verification and adaptive frequency hopping.
+              </p>
+              <ul class="project-highlights">
+                <li>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Supports 1,000+ hops with &lt;15ms latency</span>
+                </li>
+                <li>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Ultra-low power sleep cycle (&lt;8µA)</span>
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">Rust</span>
+                <span class="project-tag">BLE 5.4</span>
+                <span class="project-tag">Thread</span>
+                <span class="project-tag">MQTT-SN</span>
+                <span class="project-tag">Zephyr RTOS</span>
+              </div>
+              <div class="project-footer">
+                <a href="#contact" class="btn btn-secondary btn-sm">
+                  <span>Explore Specs</span>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="./assets/omniagent.jpg" alt="OmniAgent Physical Space Hub" class="project-img" loading="lazy">
+              <div class="project-badge">Agentic Systems</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">OmniAgent: Physical Orchestration</h3>
+              <p class="project-desc">
+                Multimodal agentic hub that translates natural language intentions into coordinated physical actions across smart appliances, HVAC, and robotics.
+              </p>
+              <ul class="project-highlights">
+                <li>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Context-aware spatial memory graph</span>
+                </li>
+                <li>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span>Multi-protocol hardware translation</span>
+                </li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">LLM Agents</span>
+                <span class="project-tag">Matter</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">WebSockets</span>
+              </div>
+              <div class="project-footer">
+                <a href="#contact" class="btn btn-secondary btn-sm">
+                  <span>View Case Study</span>
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Experience Timeline
+         ======================================================================= -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Career History</div>
+          <h2 class="section-title">Engineering Milestones</h2>
+          <p class="section-desc">Key roles where I designed, deployed, and scaled high-reliability hardware and software infrastructure.</p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Lead AI & Embedded Systems Architect</h3>
+                <span class="timeline-date">2023 - Present</span>
+              </div>
+              <div class="timeline-company">Aether Robotics & Autonomous Systems</div>
+              <p class="timeline-desc">
+                Directed hardware-software co-design of next-generation edge compute gateways. Scaled real-time telemetry streaming from 10k to 150k messages/sec while trimming edge inference power consumption by 35%.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Senior IoT Firmware Engineer</h3>
+                <span class="timeline-date">2021 - 2023</span>
+              </div>
+              <div class="timeline-company">Nexus Connected Technologies</div>
+              <p class="timeline-desc">
+                Authored fault-tolerant mesh routing protocols in C++ and Zephyr RTOS for industrial IoT clusters. Deployed over-the-air (OTA) differential update pipelines supporting 50,000+ remote units globally.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Systems & Full-Stack Engineer</h3>
+                <span class="timeline-date">2019 - 2021</span>
+              </div>
+              <div class="timeline-company">Synthetix Cloud Labs</div>
+              <p class="timeline-desc">
+                Designed high-speed time-series dashboards and distributed microservices with Kafka, Go, and React. Pioneered real-time browser canvas visualization of high-frequency vibration diagnostics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Contact Hub & Form
+         ======================================================================= -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Get in Touch</div>
+          <h2 class="section-title">Let's Build Something Exceptional</h2>
+          <p class="section-desc">Have an upcoming AI/IoT architecture challenge, an edge computing project, or an engineering role? Drop me a message.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Direct Email</div>
+                <div class="contact-value" id="emailText">yuchen.aiot@gmail.com</div>
+                <button class="copy-email-btn" id="copyEmailBtn">
+                  <svg style="width: 14px; height: 14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  <span id="copyEmailLabel">Copy Address</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-label">Location & Status</div>
+                <div class="contact-value">Taiwan / Remote</div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Open for Internships, Research & Project Collaborations</div>
+              </div>
+            </div>
+
+            <div class="contact-card" style="flex-direction: column; gap: 0.85rem;">
+              <div class="contact-label">Digital Presence</div>
+              <div class="social-links-row">
+                <!-- GitHub -->
+                <a href="https://github.com/bambamboo0321" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+                <!-- X / Twitter -->
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X / Twitter">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Your Name</label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Dr. Jordan Rivera" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Your Email</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="jordan@domain.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">Project / Collaboration Type</label>
+                <input type="text" id="contactSubject" class="form-input" placeholder="Edge AI Deployment / IoT Consulting" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Message Details</label>
+                <textarea id="contactMessage" class="form-textarea" placeholder="Tell me about your system requirements, goals, or questions..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submitContactBtn" style="width: 100%;">
+                <span id="submitBtnText">Transmit Dispatch</span>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification Feedback -->
+  <div class="toast-notice" id="toastNotice" role="alert" aria-live="polite">
+    <svg style="width: 22px; height: 22px; color: var(--accent-emerald);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+    </svg>
+    <span id="toastMsg">Dispatch sent successfully! I will respond within 24 hours.</span>
+  </div>
+
+  <!-- =======================================================================
+       Footer
+       ======================================================================= -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <div style="font-weight: 700; color: var(--text-highlight); margin-bottom: 0.25rem;">Yu Chen &copy; <span id="currentYear">2026</span></div>
+        <div style="font-size: 0.82rem;">Crafted with Vanilla HTML5, Modern CSS & ES6+. Zero bloat.</div>
+      </div>
+
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        <span>Operational &bull; <span id="footerZoneLabel">Local Time</span>: <strong id="clockDisplay" style="color: var(--accent-cyan);">--:--:--</strong></span>
+      </div>
+
+      <div>
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll to top" title="Back to Top">
+          <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
