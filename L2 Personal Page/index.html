@@ -205,6 +205,41 @@
             </div>
           </div>
         </div>
+
+        <!-- ===================================================================
+             Central Real-Time World Clock (Big & Centered)
+             =================================================================== -->
+        <div class="central-clock-wrapper" id="centralClockWrapper">
+          <div class="central-clock-card">
+            <div class="clock-badge">
+              <span class="status-dot"></span>
+              <span id="centralZoneBadge">TAIPEI / TAIWAN (UTC+8)</span>
+              <button class="clock-format-toggle" id="formatToggleBtn" title="Switch 12H / 24H Format">24H</button>
+            </div>
+
+            <!-- Big Centered Digits -->
+            <div class="central-big-time" id="bigTimeContainer">
+              <span id="bigTimeHours">11</span><span class="time-colon">:</span><span id="bigTimeMinutes">05</span><span class="time-colon">:</span><span id="bigTimeSeconds">00</span>
+              <span class="time-period" id="bigTimePeriod"></span>
+            </div>
+
+            <!-- Full Calendar Date -->
+            <div class="central-date" id="bigTimeDate">
+              Wednesday, September 16, 2026
+            </div>
+
+            <!-- Quick-Switch Timezone Pills -->
+            <div class="central-timezone-pills">
+              <button class="tz-pill" data-zone="auto">📍 Local Time</button>
+              <button class="tz-pill active" data-zone="Asia/Taipei">🇹🇼 Taipei</button>
+              <button class="tz-pill" data-zone="Asia/Tokyo">🇯🇵 Tokyo</button>
+              <button class="tz-pill" data-zone="America/Los_Angeles">🇺🇸 San Francisco</button>
+              <button class="tz-pill" data-zone="America/New_York">🇺🇸 New York</button>
+              <button class="tz-pill" data-zone="Europe/London">🇬🇧 London</button>
+              <button class="tz-pill" data-zone="UTC">🌐 UTC</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

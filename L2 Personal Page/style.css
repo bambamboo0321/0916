@@ -786,6 +786,163 @@ section {
 }
 
 /* ==========================================================================
+   Central Mission Clock Display (Big & Centered)
+   ========================================================================== */
+.central-clock-wrapper {
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.central-clock-card {
+  width: 100%;
+  max-width: 920px;
+  background: var(--bg-glass-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.4rem 2.8rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg), 0 0 45px var(--glow-primary);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.central-clock-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), 0 0 60px var(--glow-cyan);
+}
+
+.central-clock-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-accent);
+}
+
+.clock-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 1.1rem;
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.clock-format-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+  color: var(--text-highlight);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.clock-format-toggle:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #fff;
+}
+
+.central-big-time {
+  font-family: var(--font-mono);
+  font-size: clamp(3.4rem, 8.5vw, 6.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--text-highlight);
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 40px var(--glow-cyan), 0 0 80px var(--glow-primary);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.15rem;
+  margin-bottom: 0.65rem;
+}
+
+.time-colon {
+  color: var(--accent-cyan);
+  animation: blinkColon 1s infinite;
+  display: inline-block;
+  transform: translateY(-4px);
+}
+
+@keyframes blinkColon {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.time-period {
+  font-size: clamp(1.2rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-left: 0.6rem;
+  vertical-align: super;
+}
+
+.central-date {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.02em;
+}
+
+.central-timezone-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tz-pill {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.38rem 0.95rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tz-pill:hover {
+  color: var(--text-highlight);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.tz-pill.active {
+  background: var(--gradient-accent);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 16px var(--glow-primary);
+}
+
+/* ==========================================================================
    Interactive Terminal Section
    ========================================================================== */
 .terminal-wrapper {

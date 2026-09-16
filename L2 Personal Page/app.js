@@ -625,7 +625,7 @@ function initScrollAndNav() {
 }
 
 /* ==========================================================================
-   9. World Clock & Timezone Management
+   9. World Clock & Timezone Management (Central Big Display + Nav & Footer)
    ========================================================================== */
 function initTimeAndZone() {
   const navTimeDigits = document.getElementById('navTimeDigits');
@@ -634,20 +634,33 @@ function initTimeAndZone() {
   const yearDisplay = document.getElementById('currentYear');
   const timezoneSelect = document.getElementById('timezoneSelect');
 
+  // Big Central Clock Elements
+  const bigTimeHours = document.getElementById('bigTimeHours');
+  const bigTimeMinutes = document.getElementById('bigTimeMinutes');
+  const bigTimeSeconds = document.getElementById('bigTimeSeconds');
+  const bigTimePeriod = document.getElementById('bigTimePeriod');
+  const bigTimeDate = document.getElementById('bigTimeDate');
+  const centralZoneBadge = document.getElementById('centralZoneBadge');
+  const formatToggleBtn = document.getElementById('formatToggleBtn');
+  const tzPills = document.querySelectorAll('.tz-pill');
+
   if (yearDisplay) {
     yearDisplay.textContent = new Date().getFullYear();
   }
 
   // Detect user's local timezone
-  const detectedLocalZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+  const detectedLocalZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Taipei';
 
-  // Read saved preference or default to auto
-  let activeZone = localStorage.getItem('av_preferred_timezone') || 'auto';
-  if (timezoneSelect) {
-    timezoneSelect.value = activeZone;
-    timezoneSelect.addEventListener('change', (e) => {
-      activeZone = e.target.value;
-      localStorage.setItem('av_preferred_timezone', activeZone);
+  // Read saved preference or default to Asia/Taipei
+  let activeZone = localStorage.getItem('av_preferred_timezone') || 'Asia/Taipei';
+  let is24Hour = localStorage.getItem('av_clock_format') !== '12H'; // default 24H
+
+  if (formatToggleBtn) {
+    formatToggleBtn.textContent = is24Hour ? '24H' : '12H';
+    formatToggleBtn.addEventListener('click', () => {
+      is24Hour = !is24Hour;
+      localStorage.setItem('av_clock_format', is24Hour ? '24H' : '12H');
+      formatToggleBtn.textContent = is24Hour ? '24H' : '12H';
       updateClocks();
     });
   }
@@ -665,36 +678,98 @@ function initTimeAndZone() {
     'UTC': 'UTC (Universal)'
   };
 
+  function setTimezone(newZone) {
+    activeZone = newZone;
+    localStorage.setItem('av_preferred_timezone', activeZone);
+
+    if (timezoneSelect) {
+      timezoneSelect.value = activeZone;
+    }
+
+    tzPills.forEach(pill => {
+      if (pill.getAttribute('data-zone') === activeZone) {
+        pill.classList.add('active');
+      } else {
+        pill.classList.remove('active');
+      }
+    });
+
+    updateClocks();
+  }
+
+  if (timezoneSelect) {
+    timezoneSelect.value = activeZone;
+    timezoneSelect.addEventListener('change', (e) => {
+      setTimezone(e.target.value);
+    });
+  }
+
+  tzPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      setTimezone(pill.getAttribute('data-zone'));
+    });
+  });
+
   function updateClocks() {
     const now = new Date();
     const effectiveZone = activeZone === 'auto' ? detectedLocalZone : activeZone;
 
-    let formattedTime;
+    // Format time parts
     try {
-      formattedTime = new Intl.DateTimeFormat([], {
+      const dtf = new Intl.DateTimeFormat('en-US', {
         timeZone: effectiveZone,
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
-        hour12: false
-      }).format(now);
+        hour12: !is24Hour
+      });
+
+      const parts = dtf.formatToParts(now);
+      let hours = '00', minutes = '00', seconds = '00', dayPeriod = '';
+
+      parts.forEach(p => {
+        if (p.type === 'hour') hours = p.value;
+        if (p.type === 'minute') minutes = p.value;
+        if (p.type === 'second') seconds = p.value;
+        if (p.type === 'dayPeriod') dayPeriod = p.value.toUpperCase();
+      });
+
+      if (bigTimeHours) bigTimeHours.textContent = hours;
+      if (bigTimeMinutes) bigTimeMinutes.textContent = minutes;
+      if (bigTimeSeconds) bigTimeSeconds.textContent = seconds;
+      if (bigTimePeriod) bigTimePeriod.textContent = dayPeriod;
+
+      const formattedNav = `${hours}:${minutes}:${seconds}${dayPeriod ? ' ' + dayPeriod : ''}`;
+      if (navTimeDigits) navTimeDigits.textContent = formattedNav;
+      if (clockDisplay) clockDisplay.textContent = formattedNav;
+
+      // Full Calendar Date
+      if (bigTimeDate) {
+        const dateStr = new Intl.DateTimeFormat('en-US', {
+          timeZone: effectiveZone,
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }).format(now);
+        bigTimeDate.textContent = dateStr;
+      }
+
+      if (centralZoneBadge) {
+        centralZoneBadge.textContent = (zoneLabels[activeZone] || activeZone).toUpperCase();
+      }
+
+      if (footerZoneLabel) {
+        footerZoneLabel.textContent = zoneLabels[activeZone] || activeZone;
+      }
     } catch (err) {
-      formattedTime = now.toLocaleTimeString();
-    }
-
-    if (navTimeDigits) {
-      navTimeDigits.textContent = formattedTime;
-    }
-
-    if (clockDisplay) {
-      clockDisplay.textContent = formattedTime;
-    }
-
-    if (footerZoneLabel) {
-      footerZoneLabel.textContent = zoneLabels[activeZone] || activeZone;
+      const fallback = now.toLocaleTimeString();
+      if (navTimeDigits) navTimeDigits.textContent = fallback;
+      if (clockDisplay) clockDisplay.textContent = fallback;
     }
   }
 
-  updateClocks();
+  // Initial call & sync pills
+  setTimezone(activeZone);
   setInterval(updateClocks, 1000);
 }
