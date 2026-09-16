@@ -2,6 +2,10 @@
 
 An interactive, zero-dependency personal website and showcase for **Yu Chen**, an AI & IoT Engineering Student and Researcher based in Taiwan.
 
+🌐 **Live Demo Website**: [https://bambamboo0321.github.io/0916/](https://bambamboo0321.github.io/0916/)
+
+---
+
 ## 🚀 Key Features
 
 - **Dynamic Interactive Terminal (`yuchen@aiot-node`)**:
