@@ -1,6 +1,12 @@
 # Yu Chen — Personal Portfolio & AIoT Systems Showcase
 
-> 🌐 **Live Demo Website**: [https://bambamboo0321.github.io/0916/](https://bambamboo0321.github.io/0916/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-bambamboo0321.github.io%2F0916-success?style=for-the-badge&logo=github)](https://bambamboo0321.github.io/0916/)
+
+> 🌐 **Live Demo Website**: **[https://bambamboo0321.github.io/0916/](https://bambamboo0321.github.io/0916/)**
+
+[![Yu Chen Personal Page Demo Preview](assets/demo-preview.png)](https://bambamboo0321.github.io/0916/)
+
+[![Big Centered Real-Time Mission Clock](assets/demo-clock.png)](https://bambamboo0321.github.io/0916/)
 
 An interactive, zero-dependency personal website and showcase for **Yu Chen**, an AI & IoT Engineering Student and Researcher based in Taiwan.
 
